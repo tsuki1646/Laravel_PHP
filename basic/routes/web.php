@@ -32,4 +32,8 @@ Route::get('/about', function () {
 Route::get('/contact', [ContactController::class, 'index']
 );
 
+// Route::get('/contact-moon', [ContactController::class, 'index']
+// )->name('con');
+
+
 
