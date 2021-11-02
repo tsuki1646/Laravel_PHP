@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,11 @@ Route::get('/contact', [ContactController::class, 'index']
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $users = User::all();
+    /** User */
+    //$users = User::all();
+
+    /** Queries Builder */
+    $users = DB::table('users')->get();
+
     return view('dashboard', compact('users'));
 })->name('dashboard');
