@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CategoryController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -38,8 +39,9 @@ Route::get('/contact', [ContactController::class, 'index']
 // Route::get('/contact-moon', [ContactController::class, 'index']
 // )->name('con');
 
-
-
+//Category Controller
+Route::get('/category/all', [CategoryController::class, 'AllCat']
+)->name('all.category');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     /** User */
