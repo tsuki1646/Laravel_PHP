@@ -17,9 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    echo "This is Home Page";
+});
+
 Route::get('/about', function () {
     return view('about');
 });
+
+// Route::get('/about', function () {
+//     return view('about');
+// })->middleware('check');
 
 Route::get('/contact', [ContactController::class, 'index']
 );
