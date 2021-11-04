@@ -15,7 +15,10 @@ class CategoryController extends Controller
     {
         //$categories = Category::all(); //Lesson26
         //$categories = Category::latest()->get();
-        $categories = DB::table('categories')->latest()->get();
+        //$categories = DB::table('categories')->latest()->get();
+        //$categories = DB::table('categories')->latest()->paginate();
+        //$categories = DB::table('categories')->latest()->paginate(5);
+        $categories = Category::latest()->paginate(5);
         return view('admin.category.index', compact('categories'));
     }
 
