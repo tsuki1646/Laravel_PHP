@@ -18,11 +18,14 @@ class CategoryController extends Controller
         //$categories = DB::table('categories')->latest()->get();
         //$categories = DB::table('categories')->latest()->paginate();
         //$categories = DB::table('categories')->latest()->paginate(5);
-        //$categories = Category::latest()->paginate(5);
-        $categories = DB::table('categories')
-                ->join('users', 'categories.user_id','users.id')
-                ->select('categories.*','users.name')
-                ->latest()->paginate(5);
+        $categories = Category::latest()->paginate(5);
+        
+        // $categories = DB::table('categories')
+        //         ->join('users', 'categories.user_id','users.id')
+        //         ->select('categories.*','users.name')
+        //         ->latest()->paginate(5);
+
+
 
         return view('admin.category.index', compact('categories'));
     }
@@ -61,4 +64,21 @@ class CategoryController extends Controller
 
         return Redirect()->back()->with('success', 'Category Insert Successfully');  
     }
+
+    public function Edit($id)
+    {
+        $categories = Category::find($id);
+        return view('admin.category.edit', compact('categories'));
+    }
+
+    public function Update(Request $request, $id)
+    {
+        $update = Category::find($id)->update([
+            'category_name' => $request->category_name,
+            'user_id' =>Auth::user()->id
+        ]);
+        return Redirect()->route('all.category')->with('success', 'Category Updated Successfully');
+    }
+
+    
 }
