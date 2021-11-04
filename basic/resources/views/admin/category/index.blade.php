@@ -53,7 +53,7 @@
                                         @endif
                                     </td>
                                     <td> 
-                                        <a href="{{ url('category/restore/'.$category->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ url('category/edit/'.$category->id) }}" class="btn btn-info">Edit</a>
                                         <a href="{{ url('softdelete/category/'.$category->id) }}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
