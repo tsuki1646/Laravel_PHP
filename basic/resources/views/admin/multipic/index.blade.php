@@ -8,15 +8,17 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            
-        </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="card">                       
-                                                                                            
+                    <div class="card-group">                       
+                        @foreach($images as $multi)
+                        <div class="col-md-4 mt-5">
+                            <div class="card">
+                                <img scr="{{ asset($multi->image) }}" alt="">
+                            </div>
+                        </div>
+                        @endforeach                                                                    
                     </div>
                 </div>
 
@@ -24,11 +26,11 @@
                     <div class="card">
                         <div class="card-header">Multi Image</div>
                         <div class="card-body">
-                            <form action ="" method="POST" enctype="multipart/form-data">
+                            <form action ="{{ route('store.image')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Brand Image</label>
-                                    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1">Multi Image</label>
+                                    <input type="file" name="image[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" multiple="">
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
                                     @error('image')
