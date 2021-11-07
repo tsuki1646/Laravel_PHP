@@ -1,11 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <!-- {{ __('Dashboard') }} -->
-            Edit Brand<b></b>
-            
-        </h2>
-    </x-slot>
+@extends('admin.admin_master')
+
+@section('admin')
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -25,7 +20,7 @@
             <div class="row">
                     
 
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">Edit Brand</div>
                         <div class="card-body">
@@ -53,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <img src="{{ asset($brands->brand_image)}}" style="width:400px; height:200px;">
+                                    <img src="{{ asset($brands->brand_image)}}" style="width:160px; height:80px;">
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary">Update Brand</button>
@@ -67,4 +62,4 @@
             
         </div>
     </div>
-</x-app-layout>
+@endsection

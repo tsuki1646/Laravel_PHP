@@ -1,11 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <!-- {{ __('Dashboard') }} -->
-            All Brand<b></b>
-            
-        </h2>
-    </x-slot>
+@extends('admin.admin_master')
+
+@section('admin')
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -44,7 +39,7 @@
                                 <tr>
                                     <th scope="row">{{ $brands->firstItem()+$loop->index }}</th>
                                     <td> {{ $brand->brand_name }} </td>
-                                    <td> <img src="{{ asset($brand->brand_image) }}" style="width:400px; height:200px"></td>
+                                    <td> <img src="{{ asset($brand->brand_image) }}" style="width:80px; height:40px"></td>
                                     <td> 
                                         @if($brand->created_at == NULL )
                                         <span class="text-danger">No Date Set</span>
@@ -103,4 +98,4 @@
 
 
     </div>
-</x-app-layout>
+@endsection
