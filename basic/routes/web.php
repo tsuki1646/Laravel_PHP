@@ -100,7 +100,10 @@ Route::get('/add/about', [AboutController::class, 'AddAbout']
 )->name('add.about');
 Route::post('/store/about', [AboutController::class, 'StoreAbout']
 )->name('store.about');
-
+Route::get('/about/edit/{id}', [AboutController::class, 'EditAbout']
+);
+Route::post('/update/homeabout/{id}', [AboutController::class, 'UpdateAbout']
+);
 
 
 
