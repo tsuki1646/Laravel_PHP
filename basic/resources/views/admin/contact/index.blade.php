@@ -12,7 +12,7 @@
                 
                 <div>
                     <h4>Contact About</h4>
-                    <a href="{{ route('add.about') }}"><button class="btn btn-info">Add About</button></a>
+                    <a href="{{ route('add.contact') }}"><button class="btn btn-info">Add About</button></a>
                 </div>
 
                 <div class="col-md-12">
