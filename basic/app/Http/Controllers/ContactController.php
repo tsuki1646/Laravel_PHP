@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    public function __construct()  
+    public function AdminContact()
     {
-        $this->middleware('auth');
-    }
-    
-    public function index(){
-        //echo "This is our Contact Page";
-        return view('contact');
+        $contacts = Contact::all();
+        return view('admin.contact.index', compact('contacts'));
     }
 }
