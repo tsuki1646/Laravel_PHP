@@ -11,7 +11,7 @@
             @csrf
             <div class="form-group">
                 <label for="exampleFormControlInput3">Current Password</label>
-                <input type="email" class="form-control" id="current_password" placeholder="Current Password" name="oldpassword">
+                <input type="password" class="form-control" id="current_password" placeholder="Current Password" name="oldpassword">
                 @error('oldpassword')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
