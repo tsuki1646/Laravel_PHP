@@ -68,7 +68,6 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Brand Name</label>
                                     <input type="text" name="brand_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
                                     @error('brand_name')
                                         <span class="text-danger">{{ $message }}</span>
@@ -78,7 +77,6 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Brand Image</label>
                                     <input type="file" name="brand_image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
                                     @error('brand_image')
                                         <span class="text-danger">{{ $message }}</span>

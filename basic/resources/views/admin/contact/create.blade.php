@@ -13,17 +13,24 @@
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Contact Email</label>
                     <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Contact Email">
-                    <span class="mt-2 d-block">We'll never share your email with anyone else.</span>
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Contact Phone</label>
                     <input type="text" name="phone" class="form-control" id="exampleFormControlInput1" placeholder="Contact Phone">
-                    <span class="mt-2 d-block">We'll never share your email with anyone else.</span>
+                    @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Contact Address</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"></textarea>
+                    @error('address')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-footer pt-4 pt-5 mt-4 border-top">
