@@ -52,4 +52,10 @@ class ContactController extends Controller
 
         return Redirect()->route('contact')->with('success', 'About Inserted Successfully');
     }
+
+    public function AdminMessage()
+    {
+        $messages = ContactForm::all();
+        return(view('admin.contact.message', compact('messages')));
+    }
 }
