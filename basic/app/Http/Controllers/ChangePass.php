@@ -33,6 +33,17 @@ class ChangePass extends Controller
         {
             return redirect()->back()->with('error', 'Current Password is Valid');
         }
+    }
 
+    public function PUpdate()
+    {
+        if(Auth::user())
+        {
+            $user = User::find(Auth::user()->id);
+            if($user)
+            {
+                return view('admin.body.update_profile', compact('user'));
+            }
+        }
     }
 }
